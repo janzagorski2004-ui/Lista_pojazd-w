@@ -12,32 +12,32 @@ class Date{
         m_year=0;
     }
    
-    void setDay(d){
-        if(d>1&&d<32)
+    void setDay(int d){
+        if(d<1&&d>31)
         {
             
             m_day= 0;
-            return std::cout<<"Invalid nuber"
+            std::cout<<"Invalid nuber ";
         }
         else
         {
             m_day=d;
         }
     }
-    void setMonth(d){
+    void setMonth(int d){
         if(d>1&&d<13)
         {
             m_month= 0;
-            return std::cout<<"Invalid nuber"
+            std::cout<<"Invalid nuber ";
         }
         else
         {
             m_month=d;
-            return std::cout<<"Invalid nuber"
+            std::cout<<"Invalid nuber ";
         }
     }
-    void setYear(d){
-        if(y<1)
+    void setYear(int d){
+        if(d<1)
         {
             m_year= 0;
             
@@ -56,7 +56,7 @@ class Date{
     int getYear(){
         return m_year;
     }
-}
+};
 class Vehicle{
     public:
     std::string name;
@@ -76,7 +76,7 @@ class Car: public Vehicle{
     int doors;
     int seats;
     Car(const std::string& name,const Date& race_date,int weight,int power,const std::string& drive,const std::string& engine,const std::string& bodyType,int doors,int seats): Vehicle(name, race_date, weight, power),drive(drive),engine(engine),bodyType(bodyType),doors(doors),seats(seats){
-        std::cout<<"Car instance has been created!"<<endl;
+        std::cout<<"Car instance has been created!"<<std::endl;
     }
 };
 class Motorcycle : public Vehicle {
@@ -84,6 +84,6 @@ public:
     bool abs;
     std::string motoType;
     Motorcycle(const std::string& name,const Date& race_date,int weight,int power,bool abs,const std::string& motoType): Vehicle(name, race_date, weight, power),abs(abs),motoType(motoType){
-        std::cout<<"Motocycle instance has been created!"<<endl;  
+        std::cout<<"Motocycle instance has been created!"<<std::endl;  
     }
 };
