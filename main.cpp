@@ -180,7 +180,11 @@ void addVehicle(std::vector<JZ::Car>& cars, std::vector<JZ::Motorcycle>& motorcy
         std::cout<<"What did you raced"<<std::endl;
         std::cout<<"1. Car"<<std::endl;
         std::cout<<"2. Motorcycle"<<std::endl;
-        std::cin>>a;
+        while (!(std::cin>>a)) 
+        {
+            std::cout<<"Invalid number try again!"<<std::endl; 
+            clearBuffer(); 
+        }
         if(a==1)
         {   
             std::cout<<"Enter data of the car"<<std::endl;
@@ -334,7 +338,11 @@ void modifyVechicle(std::vector<JZ::Car>& cars, std::vector<JZ::Motorcycle>& mot
     int a;
     std::string b;
     std::cout<<"Provide id numer of vechicle";
-    std::cin>>a;
+    while (!(std::cin>>a)) 
+    {
+        std::cout<<"Invalid number try again!"<<std::endl; 
+        clearBuffer(); 
+    }
     for (JZ::Car &i : cars) 
     { 
         if(i.id==a)
@@ -353,7 +361,11 @@ void modifyVechicle(std::vector<JZ::Car>& cars, std::vector<JZ::Motorcycle>& mot
                 std::cout<<"8. Number of doors"<<std::endl;
                 std::cout<<"9. Number of seats"<<std::endl;
                 std::cout<<"10. Exit modify option"<<std::endl;
-                std::cin>>a;
+                while (!(std::cin>>a)) 
+                    {
+                        std::cout<<"Invalid number try again!"<<std::endl; 
+                        clearBuffer(); 
+                    }
                 
                 
                 if(a == 1 || a == 5 || a == 6 || a == 7) 
@@ -465,7 +477,11 @@ void modifyVechicle(std::vector<JZ::Car>& cars, std::vector<JZ::Motorcycle>& mot
                 std::cout<<"5. If it has ABS"<<std::endl;
                 std::cout<<"6. Motorcycle type"<<std::endl;
                 std::cout<<"7. Exit modify option"<<std::endl;
-                std::cin>>a;
+                while (!(std::cin>>a)) 
+                {
+                    std::cout<<"Invalid number try again!"<<std::endl; 
+                    clearBuffer(); 
+                }
                 
                 
                 if(a == 1 || a == 6) 
@@ -549,7 +565,11 @@ void deleteVehicle(std::vector<JZ::Car>& cars, std::vector<JZ::Motorcycle>& moto
 {   
     int a;
     std::cout<<"Provide id numer of vechicle";
-    std::cin>>a;
+    while (!(std::cin>>a)) 
+    {
+        std::cout<<"Invalid number try again!"<<std::endl; 
+        clearBuffer(); 
+    }
     int d = 0;
     for (JZ::Car &i : cars) 
     {
@@ -639,7 +659,11 @@ int main()
         std::cout<<"3. Remove raced vehicle"<<std::endl;
         std::cout<<"4. Print all raced vehicles to terminal"<<std::endl;
         std::cout<<"5. Save and exit"<<std::endl;
-        std::cin>>a;
+        while (!(std::cin>>a)) 
+        {
+            std::cout<<"Invalid number try again!"<<std::endl; 
+            clearBuffer(); 
+        }
         switch(a){
             case 1:
                 addVehicle(cars,motorcycles,id_counter);
